@@ -134,7 +134,7 @@ I always find above conda command not working for me. Please use the pip wheel d
 # CUDA 11.0
 pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
 ```
-Please do not worry if the pytorch version does not match with your CUDA version. It won't be a problem if you run codes from [StyleGAN2](https://github.com/NVlabs/stylegan2-ada-pytorch).
+Please do not worry if the version of cudatoolkit here does not match with the CUDA version we just downloaded. It won't be a problem if you run codes from [StyleGAN2](https://github.com/NVlabs/stylegan2-ada-pytorch).
 
 # Problems I encountered
 
