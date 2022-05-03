@@ -1,4 +1,4 @@
-# EnvironmentalSeting
+# EnvironmentalSettings
 Some problems I encountered when setting up my enviroment and my solutions
 
 Basic information about my device: Genforce RTX 3090 NVIDIA-SMI 460.106.00  Driver Version: 460.106.00   CUDA Version: 11.2  Ubuntu x86
@@ -63,7 +63,7 @@ nvidia-smi
 
 
 ### Install CUDA-toolkit
-Install CUDA-toolkit by
+Step 1. Install CUDA-toolkit by
 
 ```
 wget https://developer.download.nvidia.com/compute/cuda/11.2.2/local_installers/cuda_11.2.2_460.32.03_linux.run
@@ -72,5 +72,27 @@ sudo sh cuda_11.2.2_460.32.03_linux.run
 ```
 
 ***Remember: DO NOT check the option of installing the driver!!!***
-In Yifan's blog this line is written in bold and italic texts. I guess this is super important but I do not know what will happen if the driver is installed at the same time.
 
+In Yifan's blog this line is written in bold and italic texts. I guess this is super important but I do not know what will happen if the driver is installed at the same time.
+![图片](https://user-images.githubusercontent.com/30890745/166521580-5262001d-ca62-4ad1-ba48-772688e53cfa.png)
+
+After the installation, you will see the result as below.
+![图片](https://user-images.githubusercontent.com/30890745/166521626-06dd5009-dc95-475c-a152-cc2832460ede.png)
+
+Step 2. Update enviromental variable
+
+Set environmental variables in the `~/.bashrc` by
+```
+cd ~
+vim ./.bashrc
+```
+Then paste below lines into your bashrc file. 
+'''
+export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export CUDA_HOME=/usr/local/cuda
+'''
+Remember to update your bashrc file by
+```
+source ./.bashrc
+```
