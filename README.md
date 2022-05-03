@@ -9,9 +9,11 @@ Basic information about my device:
 
 ![图片](https://user-images.githubusercontent.com/30890745/166502799-6de7cb43-cab1-4638-b224-08be32758f8f.png)
 
+All solutions, actions, operations here are validated by Xiaodan Xing at May 3rd, 2022. They might not work in a date after this date. 
+
 
 ## Update Cuda and Cudnn
-Credit to [Best practice for upgrading CUDA and cuDNN for tensorflow](https://stackoverflow.com/questions/50213021/best-practice-for-upgrading-cuda-and-cudnn-for-tensorflow) and [Install CUDA 11.2, cuDNN 8.1.0, PyTorch v1.8.0 (or v1.9.0), and python 3.9 on RTX3090 for deep learning](https://medium.com/analytics-vidhya/install-cuda-11-2-cudnn-8-1-0-and-python-3-9-on-rtx3090-for-deep-learning-fcf96c95f7a1)
+Credit to [Best practice for upgrading CUDA and cuDNN for tensorflow](https://stackoverflow.com/questions/50213021/best-practice-for-upgrading-cuda-and-cudnn-for-tensorflow) and [Install CUDA 11.2, cuDNN 8.1.0, PyTorch v1.8.0 (or v1.9.0), and python 3.9 on RTX3090 for deep learning](https://medium.com/analytics-vidhya/install-cuda-11-2-cudnn-8-1-0-and-python-3-9-on-rtx3090-for-deep-learning-fcf96c95f7a1).
 
 ### Install NVIDIA DRIVER
 
@@ -165,7 +167,7 @@ According to my experiment on my RTX3090 device and my TeslaK80 device (from Col
 关于stylegan2-ada中的bias_act_plugin
 ](https://blog.csdn.net/weixin_44180836/article/details/119615131). 
 
-The solution in this blog does not work if the CUDA is not upgraded or downgraded. 
+The solution in this blog does not work if you do not upgrade or downgrade the CUDA. 
 
 
 
