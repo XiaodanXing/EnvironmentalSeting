@@ -10,6 +10,8 @@ Basic information about my device: Genforce RTX 3090 NVIDIA-SMI 460.106.00  Driv
 ## Update Cuda and Cudnn
 Credit to [Best practice for upgrading CUDA and cuDNN for tensorflow](https://stackoverflow.com/questions/50213021/best-practice-for-upgrading-cuda-and-cudnn-for-tensorflow) and [Install CUDA 11.2, cuDNN 8.1.0, PyTorch v1.8.0 (or v1.9.0), and python 3.9 on RTX3090 for deep learning](https://medium.com/analytics-vidhya/install-cuda-11-2-cudnn-8-1-0-and-python-3-9-on-rtx3090-for-deep-learning-fcf96c95f7a1)
 
+### Install NVIDIA DRIVER
+
 Step 1: Remove original cuda files. **Check /usr/local/ to see if there's any folder named "cuda" left.** 
 
 ```
@@ -45,4 +47,30 @@ Step 4: Search available drivers
 ```
 ubuntu-drivers devices
 ```
+![图片](https://user-images.githubusercontent.com/30890745/166504728-1a30e940-f5b3-49cc-a7e6-7510e3743943.png)
+
+
+Step 5: Install the driver with the best version. I choose driver-460 here because of the requirement of StyleGAN2-ada-pytorch. Please choose 510 if you are working on a RTX3090 device.
+```
+sudo apt-get install nvidia-driver-460
+```
+
+Step 6: Reboot your computer after installation. After rebooting, verify the driver installation by
+
+```
+nvidia-smi
+```
+
+
+### Install CUDA-toolkit
+Install CUDA-toolkit by
+
+```
+wget https://developer.download.nvidia.com/compute/cuda/11.2.2/local_installers/cuda_11.2.2_460.32.03_linux.run
+sudo sh cuda_11.2.2_460.32.03_linux.run
+
+```
+
+***Remember: DO NOT check the option of installing the driver!!!***
+In Yifan's blog this line is written in bold and italic texts. I guess this is super important but I do not know what will happen if the driver is installed at the same time.
 
