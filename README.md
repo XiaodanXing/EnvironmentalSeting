@@ -1,4 +1,4 @@
-# EnvironmentalSettings
+# Environmental Settings (for PyTorch using StyleGAN2 )
 Some problems I encountered when setting up my environment and my solutions
 
 Basic information about my device: 
