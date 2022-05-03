@@ -20,7 +20,7 @@ dpkg --list |grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge
 
 Step 2: Then setting up the Unbuntu by
 
-'''
+```
 sudo apt-get update
 sudo apt-get upgrade -ysudo apt-get install -y build-essential cmake unzip pkg-config
 sudo apt-get install -y libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
@@ -33,16 +33,16 @@ sudo apt-get install -y libhdf5-serial-dev graphviz
 sudo apt-get install -y python3-dev python3-tk python-imaging-tk
 sudo apt-get install -y linux-image-generic linux-image-extra-virtual
 sudo apt-get install -y linux-source linux-headers-generic
-'''
+```
 
 Step 3: Add graphics ppa
-'''
+```
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get update
-'''
+```
 
 Step 4: Search available drivers
-'''
+```
 ubuntu-drivers devices
-'''
+```
 
