@@ -77,7 +77,7 @@ sudo sh cuda_11.2.2_460.32.03_linux.run
 
 ***Remember: DO NOT check the option of installing the driver!!!***
 
-In Yifan's blog, this line is written in bold and italic text. I guess this is super important, but I do not know what will happen if the driver is installed simultaneously. To not install the driver, the installation page of CUDA should be like
+In [Yifan's blog](https://medium.com/analytics-vidhya/install-cuda-11-2-cudnn-8-1-0-and-python-3-9-on-rtx3090-for-deep-learning-fcf96c95f7a1), this line is written in bold and italic text. I guess this is super important, but I do not know what will happen if the driver is installed simultaneously. To not install the driver, the installation page of CUDA should be like
 
 ![图片](https://user-images.githubusercontent.com/30890745/166521580-5262001d-ca62-4ad1-ba48-772688e53cfa.png)
 
