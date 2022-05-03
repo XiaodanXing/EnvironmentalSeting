@@ -6,7 +6,7 @@ Basic information about my device:
 * NVIDIA-SMI 460.106.00  
 * Driver Version: 460.106.00   
 * CUDA Version: 11.2  Ubuntu x86
-* 
+
 ![图片](https://user-images.githubusercontent.com/30890745/166502799-6de7cb43-cab1-4638-b224-08be32758f8f.png)
 
 
@@ -15,7 +15,7 @@ Credit to [Best practice for upgrading CUDA and cuDNN for tensorflow](https://st
 
 ### Install NVIDIA DRIVER
 
-Step 1: Remove original Cuda files. **Check /usr/local/ to see if there's any folder named "Cuda" left.** 
+Step 1: Remove original Cuda files. **Check /usr/local/ to see if there's any folder named "Cuda" left.** For me there were still folders named CUDA or CUDA-xx.x, so I removed them. Please be cautious for this operation. 
 
 ```
 sudo apt-get --purge remove cuda
@@ -128,24 +128,45 @@ For the official PyTorch implementation of StyleGAN2, PyTorch-v1.7.x is required
 conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
 ```
 
-I always find above conda command not working for me. Please use the pip wheel downloading command instead.
+I always find the above conda command not working for me. Please use the pip wheel downloading command instead.
 
 ```
 # CUDA 11.0
 pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
 ```
-Please do not worry if the version of cudatoolkit here does not match with the CUDA version we just downloaded. It won't be a problem if you run codes from [StyleGAN2](https://github.com/NVlabs/stylegan2-ada-pytorch).
+Please do not worry if the version of cudatoolkit here does not match the CUDA version we just downloaded. It won't be a problem if you run codes from [StyleGAN2](https://github.com/NVlabs/stylegan2-ada-pytorch).
+
+
+
 
 # Problems I encountered
 
 1. When using `apt-get update`, 
 ```
-The following signatures couldn‘t be verified because the public key is not available (The key number)
+The following signatures couldn't be verified because the public key is not available (The key number)
 ```
 It is because the key is not added into your device. Just add the number into your keyserver by 
 ```
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 'The key number'
 ```
+
+2. StyleGAN2 is stuck at
+```
+Setting up PyTorch plugin "bias_act_plugin"
+```
+or 
+```
+Setting up PyTorch plugin "upfirdn2d_plugin"
+```
+
+This problem is also why I uninstalled my CUDA 11.6 and CUDA 10.2. 
+
+According to my experiment on my RTX3090 device and my TeslaK80 device (from Colab), only **CUDA 11.1** and **CUDA 11.2** can avoid this mutual exclusion. For those technicians from our Chinese community, you might find a blog trying to solve this problem by deleting the mutual exclusion: [
+关于stylegan2-ada中的bias_act_plugin
+](https://blog.csdn.net/weixin_44180836/article/details/119615131). 
+
+The solution in this blog does not work if the CUDA is not upgraded or downgraded. 
+
 
 
 
