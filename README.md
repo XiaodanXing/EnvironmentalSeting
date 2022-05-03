@@ -71,7 +71,6 @@ Step 1. Install CUDA-toolkit by
 ```
 wget https://developer.download.nvidia.com/compute/cuda/11.2.2/local_installers/cuda_11.2.2_460.32.03_linux.run
 sudo sh cuda_11.2.2_460.32.03_linux.run
-
 ```
 
 ***Remember: DO NOT check the option of installing the driver!!!***
@@ -120,3 +119,38 @@ export LD_LIBRARY_PATH=/home/xiaodan/cuda/lib64:$LD_LIBRARY_PATH
 Step 4. To verify the installation, check `nvidia-smi`, and `nvcc -V`.
 
 ## Update PyTorch or downgrade PyTorch
+If the target is to use PyTorch in your device (i.e., you do not care which version of pytorch you will be using) please find a PyTorch-v1.11.0 downloading command [here](https://pytorch.org/get-started/locally/).
+
+For the official PyTorch implementation of StyleGAN2, PyTorch-v1.7.x is required. Please find corresponding commands [here](https://pytorch.org/get-started/previous-versions/). 
+
+```
+# CUDA 11.1
+conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
+```
+
+I always find above conda command not working for me. Please use the pip wheel downloading command instead.
+
+```
+# CUDA 11.0
+pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+```
+Please do not worry if the pytorch version does not match with your CUDA version. It won't be a problem if you run codes from [StyleGAN2](https://github.com/NVlabs/stylegan2-ada-pytorch).
+
+# Problems I encountered
+
+1. When using `apt-get update`, 
+```
+The following signatures couldn‘t be verified because the public key is not available (The key number)
+```
+It is because the key is not added into your device. Just add the number into your keyserver by 
+```
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 'The key number'
+```
+
+
+
+
+
+
+
+
