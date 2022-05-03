@@ -163,7 +163,10 @@ Setting up PyTorch plugin "upfirdn2d_plugin"
 
 This problem is also why I uninstalled my CUDA 11.6 and CUDA 10.2. 
 
-According to my experiment on my RTX3090 device and my TeslaK80 device (from Colab), only **CUDA 11.1** and **CUDA 11.2** can avoid this mutual exclusion. For those technicians from our Chinese community, you might find a blog trying to solve this problem by deleting the mutual exclusion: [
+According to my experiment on my RTX3090 device and my TeslaK80 device (from Colab), **CUDA 11.1** and **CUDA 11.2** can avoid this mutual exclusion. I also read from [a StackOverlow post](https://stackoverflow.com/questions/70858681/stylegan2-ada-pytorch-environment) that CUDA 11.3 can also set up these two plugins successfully. 
+
+
+For those technicians from our Chinese community, you might find a blog trying to solve this problem by deleting the mutual exclusion: [
 关于stylegan2-ada中的bias_act_plugin
 ](https://blog.csdn.net/weixin_44180836/article/details/119615131). 
 
