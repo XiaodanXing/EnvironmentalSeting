@@ -87,16 +87,18 @@ After the installation, you will see the result below.
 Step 2. Update environmental variable
 
 Set environmental variables in the `~/.bashrc` by
+
 ```
 cd ~
 vim ./.bashrc
 ```
+
 Then paste the below lines into your bashrc file. 
-'''
+```
 export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export CUDA_HOME=/usr/local/cuda
-'''
+```
 Remember to update your bashrc file by
 ```
 source ./.bashrc
