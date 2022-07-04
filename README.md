@@ -57,13 +57,13 @@ ubuntu-drivers devices
 
 Step 5: Install the driver with the best version. I choose driver-460 here because of the requirement of StyleGAN2-ada-PyTorch. Please select 510 if you are working on an RTX3090 device.
 ```
-sudo apt-get install Nvidia-driver-460
+sudo apt-get install nvidia-driver-460
 ```
 
 Step 6: Reboot your computer after installation. After rebooting, verify the driver installation by
 
 ```
-Nvidia-smi
+nvidia-smi
 ```
 
 
