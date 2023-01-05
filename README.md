@@ -29,7 +29,8 @@ Step 2: Then set up the Unbuntu by
 
 ```
 sudo apt-get update
-sudo apt-get upgrade -ysudo apt-get install -y build-essential cmake unzip pkg-config
+sudo apt-get upgrade -y
+sudo apt-get install -y build-essential cmake unzip pkg-config
 sudo apt-get install -y libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
 sudo apt-get install -y libjpeg-dev libpng-dev libtiff-dev
 sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
