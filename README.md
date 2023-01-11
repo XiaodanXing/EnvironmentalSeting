@@ -1,4 +1,4 @@
-# Environmental Settings (for PyTorch using StyleGAN2)
+# A practical guide for CUDA reinstallation
 Some problems I encountered when setting up my environment and my solutions
 
 Basic information about my device: 
